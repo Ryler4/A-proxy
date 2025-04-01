@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHANTOM PROXY</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico">
@@ -10,7 +11,7 @@
     <div class="container">
         <h1>PHANTOM PROXY</h1>
         <form id="proxyForm">
-            <input type="text" id="url" placeholder="Enter URL (e.g., https://example.com)" autocomplete="off">
+            <input type="text" id="url" placeholder="Enter URL (e.g., https://example.com)" autocomplete="off" required>
             <button type="submit">INITIATE</button>
         </form>
         <iframe id="contentFrame" sandbox="allow-scripts allow-same-origin"></iframe>
