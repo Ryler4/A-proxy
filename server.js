@@ -10,7 +10,6 @@ app.use(express.static('public'));
 
 // Proxy middleware
 app.use('/proxy', createProxyMiddleware({
-  target: '', // Leave empty; we'll set the target dynamically
   changeOrigin: true,
   pathRewrite: (path, req) => {
     // Extract the target URL from the request
