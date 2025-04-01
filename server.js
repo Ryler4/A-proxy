@@ -12,15 +12,13 @@ app.use(express.static('public'));
 app.use('/proxy', createProxyMiddleware({
   changeOrigin: true,
   pathRewrite: (path, req) => {
-    // Extract the target URL from the request
     const targetUrl = req.query.url;
     if (!targetUrl) {
       return res.status(400).send('No target URL provided');
     }
-    return targetUrl; // Rewrite the path to the target URL
+    return targetUrl;
   },
   onProxyReq: (proxyReq, req, res) => {
-    // Log the request
     console.log(`Proxying request to: ${req.query.url}`);
   },
   onError: (err, req, res) => {
