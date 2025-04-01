@@ -1,0 +1,136 @@
+body {
+    background: #000;
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    padding: 20px;
+}
+
+.terminal {
+    background: #000;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    box-shadow: 0 0 20px #0f03;
+}
+
+.header {
+    background: #111;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #0f0;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.red { background: #ff605c; }
+.yellow { background: #ffbd44; }
+.green { background: #00ca4e; }
+
+.title {
+    margin-left: 10px;
+    color: #0f0;
+    font-size: 0.9em;
+}
+
+.content {
+    padding: 20px;
+}
+
+.glitch {
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 2px 2px #0f03;
+    position: relative;
+    animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+form {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    background: #111;
+    border: 1px solid #0f0;
+    color: #0f0;
+    padding: 10px;
+    font-family: monospace;
+}
+
+button {
+    background: #0f0;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #0d0;
+}
+
+#contentFrame {
+    width: 100%;
+    height: 60vh;
+    border: 1px solid #0f0;
+    background: #111;
+    margin-top: 20px;
+}
+
+.status {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #0f0;
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.matrix-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.1;
+    z-index: -1;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 1px,
+        rgba(0, 255, 0, 0.1) 1px,
+        rgba(0, 255, 0, 0.1) 2px
+    );
+}
