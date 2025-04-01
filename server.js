@@ -18,6 +18,7 @@ app.use('/proxy', (req, res, next) => {
   createProxyMiddleware({
     target: targetUrl,
     changeOrigin: true,
+    ws: true, // Enable WebSocket proxying
     onProxyReq: (proxyReq, req, res) => {
       console.log(`Proxying request to: ${targetUrl}`);
     },
